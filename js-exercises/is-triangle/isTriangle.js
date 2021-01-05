@@ -1,5 +1,5 @@
-function isTriangle(a,b,c) {
- return (a+b+c)%3==0?true:false;
+function isTriangle(line1,line2,line3) {
+ return !(line1 + line2 <= line3 || line1 + line3 <= line2 || line2 + line3 <= line1);
 }
 
 module.exports = {
