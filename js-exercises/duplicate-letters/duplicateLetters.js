@@ -1,17 +1,15 @@
 function duplicateLetters(...args) {
-  let duplicateLetters=[];
+  let duplicateLetter="";
   args.forEach(function(text){
-      let letters=text.replace(/\s/g,"").split("").sort();
-      letters.forEach(function(letter,index){
-          if(index < letters.length-1){
-            if(letter === letters[index+1]){
-              duplicateLetters.push(letter);
-            }
-          }
+      let letters=text.replace(/\s/g,"").split("").sort().join("").match(/(.)\1*/g);
+      letters.forEach(function (letter){
+        if(letter.length > duplicateLetter.length) {
+          duplicateLetter = letter;
+        }
       });
   });
-  let duplicateCount=Array.from(new Set(duplicateLetters)).length;
-  return duplicateCount==0?false:duplicateCount+1;
+  console.log(duplicateLetter);
+  return duplicateLetter.length<=1?false:duplicateLetter.length;
 }
 
 module.exports = {
