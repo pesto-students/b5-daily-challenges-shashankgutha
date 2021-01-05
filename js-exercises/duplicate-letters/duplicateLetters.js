@@ -14,8 +14,6 @@ function duplicateLetters(...args) {
   return duplicateCount==0?false:duplicateCount+1;
 }
 
-console.log(duplicateLetters("psyfpghjklqerftyupiop"));
-
 module.exports = {
   duplicateLetters,
 };
